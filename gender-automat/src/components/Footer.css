@@ -1,0 +1,31 @@
+.footer {
+    background-color: #131417; /* Gleiche Hintergrundfarbe wie der Header */
+    color: #f8f9fa; /* Helle Textfarbe */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+    font-family: 'Lato', sans-serif; /* Lato Schriftart */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer a {
+    color: #007bff; /* Blaue Textfarbe für Links */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.highlight {
+    color: #007bff; /* Blaue Textfarbe für Guides */
+}
+
+/* RTL Styles */
+.websiteinhalt-rtl {
+    direction: rtl; /* Ändert die Leserichtung auf RTL */
+}

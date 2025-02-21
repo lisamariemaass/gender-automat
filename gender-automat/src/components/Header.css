@@ -1,0 +1,319 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #131417;
+    border-bottom: 1px solid #dee2e6;
+    max-height: 100px;
+    min-height: 50px; /* Mindesthöhe */
+    font-family: 'Lato', sans-serif;
+    transition: max-height 1.0s ease, min-height 0.5s ease; /* Smooth transition */
+    overflow: hidden;
+}
+
+header.expanded {
+    max-height: 400px; /* Erhöht die Höhe des Headers, wenn das Menü geöffnet ist */
+    min-height: 200px; /* Mindesthöhe im erweiterten Zustand */
+}
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 90px; /* Logo nutzt die gesamte Höhe des Headers */
+    margin: 0 5px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px; /* Abstand zwischen Logo und Text */
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #f8f9fa; /* Helle Textfarbe */
+    margin: 0;
+}
+
+header h1 .highlight {
+    color: #007bff; /* Blaue Textfarbe für Guides */
+}
+
+header h2 {
+    font-size: 1rem;
+    color: #f8f9fa; /* Helle Textfarbe */
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    font-family: 'Lato', sans-serif; /* Lato Schriftart */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 10px 10px 0px 10px;
+}
+
+nav ul li a {
+    color: #f8f9fa; /* Helle Textfarbe */
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif; /* Lato Schriftart */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Blaue Textfarbe beim Hover */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    font-family: 'Lato', sans-serif; /* Lato Schriftart */
+    margin: 5px 1px;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px; /* Mehr Padding */
+    border: none; /* Keine Rahmen */
+    border-radius: 20px; /* Abgerundete Ecken */
+    background-color: #162032; /* Hintergrundfarbe */
+    color: #f8f9fa; /* Weiße Schriftfarbe */
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    max-width: 250px;
+    font-family: 'Lato', sans-serif; /* Lato Schriftart */
+}
+
+.search-input {
+    border: none; /* Keine Rahmen */
+    background-color: transparent; /* Transparenter Hintergrund */
+    color: #f8f9fa; /* Textfarbe */
+    outline: none;
+    font-size: 1rem; /* Gleiche Schriftgröße wie Navbar */
+    font-family: 'Lato', sans-serif; /* Lato Schriftart */
+    flex-grow: 1;
+}
+
+.search-icon {
+    color: #007bff; /* Farbe der Lupe */
+    margin: 0 5px;
+}
+
+.menu-toggle {
+    display: none; /* Standardmäßig ausgeblendet */
+    background: none;
+    border: none;
+    color: #f8f9fa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    overflow: visible; /* Sicherstellen, dass overflow nicht hidden ist */
+    margin: 0 5px;
+    padding: 0;
+}
+
+.menu-toggle .bar {
+    display: block;
+    background: #f8f9fa;
+    width: 100%;
+    height: 2px;
+    margin: 6px 0;
+    transition: all 0.5s ease; /* Transition hinzufügen */
+}
+
+.menu-toggle.active .bar {
+    background: #007bff; /* Farbe des X-Icons */
+}
+
+.menu-toggle.active .one {
+    transform: rotate(45deg) translateY(11.5px);
+}
+
+.menu-toggle.active .two {
+    width: 0;
+}
+
+.menu-toggle.active .three {
+    transform: rotate(-45deg) translateY(-11.5px);
+}
+
+.menu-icon {
+    width: 100%; /* Stellt sicher, dass das Icon die gesamte Breite des Containers nutzt */
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    transition: transform 0.3s ease;
+}
+
+.lato-regular {
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column; /* Sicherstellen, dass Logo und Text untereinander bleiben */
+        align-items: flex-start;
+        padding: 7px;
+    }
+
+    .logo-title-container {
+        flex-direction: row; /* Logo und Titel nebeneinander */
+        align-items: center;
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 1rem;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .search-container {
+        margin-left: 0; /* Entferne das linke Margin */
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start; /* Links ausrichten */
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column; /* Sicherstellen, dass Logo und Text untereinander bleiben */
+        align-items: flex-start;
+        padding: 7px;
+    }
+
+    .logo-title-container {
+        flex-direction: row; /* Logo und Titel nebeneinander */
+        align-items: center;
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 1rem;
+    }
+
+    header h2 {
+        display: none; /* Verstecke das h2-Element */
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .search-container {
+        margin-left: 0; /* Entferne das linke Margin */
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start; /* Links ausrichten */
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* RTL Styles */
+.websiteinhalt-rtl {
+    direction: rtl; /* Ändert die Leserichtung auf RTL */
+}
+
+.websiteinhalt-rtl .menu-toggle.active .one {
+    transform: rotate(-45deg) translateY(11.5px);
+}
+
+.websiteinhalt-rtl .menu-toggle.active .two {
+    width: 0;
+}
+
+.websiteinhalt-rtl .menu-toggle.active .three {
+    transform: rotate(45deg) translateY(-11.5px);
+}

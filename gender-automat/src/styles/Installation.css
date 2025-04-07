@@ -1,0 +1,96 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FDFDFE; /* Neue Hintergrundfarbe */
+  min-height: 70vh; /* Höhe des Viewports */
+  position: relative; /* Position relativ zum Container */
+}
+
+.installation-content {
+  padding: 5px 70px;
+  background-color: #FDFDFE; /* Neue Hintergrundfarbe */
+  display: flex;
+  max-width: fit-content;
+  flex-direction: column;
+  width: 1300px;
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-size: 1rem; /* Schriftgröße für den gesamten Text */
+  color: #5c6269;
+}
+
+/* Überschriften */
+.installation-content h1, .installation-content h2, .installation-content h3 {
+  color: #444;
+  margin-bottom: 16px;
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-weight: 700;
+}
+
+/* Codeblock */
+.installation-content code {
+    background-color: rgb(13, 13, 13); /* Hintergrundfarbe des Codeblocks */
+    color: #9cdcfe; /* Textfarbe */
+    border-radius: 4px;
+    padding: 12px; /* Etwas mehr Padding */
+    font-family: 'Courier New', Courier, monospace; /* Monospace-Schriftart */
+    font-size: 0.9rem; /* Schriftgröße */
+    overflow-x: auto;
+    display: inline-block; /* Inline-Block-Darstellung */
+  }
+
+.installation-content pre code .comment {
+  color: #888888; /* Farbe für Kommentare */
+}
+
+/* Links */
+.installation-content a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.installation-content a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .installation-content {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Scrollender Button */
+.scroll-button {
+  position: fixed;
+  top: 130px;
+  right: 20px;
+  background-color: #E64E58; /* Highlight-Farbe */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  z-index: 1000; /* Sicherstellen, dass der Button über anderen Elementen liegt */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #b54047; /* Dunklere Highlight-Farbe beim Hover */
+}
+
+.code-block {
+  background-color: rgb(13, 13, 13); /* Hintergrundfarbe */
+  color: #9cdcfe; /* Textfarbe */
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap; /* Zeilenumbrüche innerhalb des Blocks */
+  margin: 16px 0; /* Einheitlicher Abstand */
+}

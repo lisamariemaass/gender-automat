@@ -1,6 +1,6 @@
 .footer {
-    background-color: #131417; /* Gleiche Hintergrundfarbe wie der Header */
-    color: #f8f9fa; /* Helle Textfarbe */
+    background-color: #FDFDFE; /* Neue Hintergrundfarbe */
+    color: #454A4F; /* Neue Schriftfarbe */
     padding: 20px;
     text-align: center;
     border-top: 1px solid #dee2e6;
@@ -13,7 +13,7 @@
 }
 
 .footer a {
-    color: #007bff; /* Blaue Textfarbe für Links */
+    color: #E64E58; /* Neue Highlight-Farbe für Links */
     text-decoration: none;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .highlight {
-    color: #007bff; /* Blaue Textfarbe für Guides */
+    color: #E64E58; /* Neue Highlight-Farbe */
 }
 
 /* RTL Styles */

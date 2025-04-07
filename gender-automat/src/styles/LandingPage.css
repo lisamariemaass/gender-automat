@@ -1,0 +1,178 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FDFDFE; /* Neue Hintergrundfarbe */
+  min-height: 70vh; /* Höhe des Viewports */
+  position: relative; /* Position relativ zum Container */
+  z-index: 1; /* Sicherstellen, dass die Landing Page unter dem Header liegt */
+}
+
+.landing-page {
+  padding: 20px 50px;
+  background-color: #FDFDFE; /* Neue Hintergrundfarbe */
+  display: flex;
+  flex-direction: column;
+  width: 1300px;
+}
+
+.landing-page h2 {
+  font-size: 1.5rem;
+  color: #454A4F; /* Neue Schriftfarbe */
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-weight: 700; /* Dickere Schrift */
+  margin: 0px 0;
+}
+
+.intro-text {
+  color: #5c6269; /* Neue Schriftfarbe */
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-size: 1rem;
+  width: 80.67%; /* 2/3 der Seite */
+  margin: 20px 0; /* Entfernt den horizontalen Abstand */
+  text-align: left !important; /* Links ausgerichteter Text mit !important */
+}
+
+.discover-button {
+  background: none;
+  color: #E64E58; /* Neue Highlight-Farbe */
+  border: none;
+  padding: 0px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0px 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.discover-button.hide {
+  transform: translateX(-100%); /* Button nach links hinaussliden */
+}
+
+.discover-button .arrow {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Karten gleichmäßig verteilen */
+  flex-wrap: nowrap; /* Karten nicht umbrechen */
+  margin: 20px 0; /* Entfernt den horizontalen Abstand */
+  width: 100%;
+  position: relative; /* Position relativ zum Container */
+  overflow: hidden; /* Verhindert das Überlaufen des Inhalts */
+  max-height: 0; /* Initial keine Höhe */
+  transition: max-height 0.5s ease-in-out; /* Smooth transition */
+}
+
+.card-container.show {
+  max-height: 3000px; /* Genügend Höhe für die Karten */
+  width: 100%;
+}
+
+.card-container.hide .card {
+  transform: translateX(100%); /* Karten nach rechts hinaussliden */
+  visibility: hidden; /* Karten unsichtbar machen */
+}
+
+.card {
+  padding: 20px;
+  width: 30%; /* Breitere Karten */
+  height: auto; /* Automatische Höhe */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sichtbarer Box-Shadow auf dunklem Hintergrund */
+  margin: 0 10px 20px 10px; /* Abstand zwischen den Karten */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Inhalt am oberen Rand ausrichten */
+  align-items: center; /* Zentriert den Inhalt horizontal */
+  background-color: #fff; /* Weißer Hintergrund */
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  transform: translateX(100%); /* Karten außerhalb des Sichtbereichs platzieren */
+  transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth transition */
+  visibility: hidden; /* Karten unsichtbar machen */
+  position: absolute; /* Karten aus dem normalen Dokumentenfluss entfernen */
+}
+
+.card-container.show .card {
+  transform: translateX(0);
+  visibility: visible; /* Karten sichtbar machen */
+  position: static; /* Karten in den normalen Dokumentenfluss zurücksetzen */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #454A4F; /* Neue Schriftfarbe */
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-weight: 700; /* Dickere Schrift */
+  text-align: center; /* Zentriert den Text */
+}
+
+.card p {
+  margin: 0;
+  padding: 0 10px;
+  color: #666; /* Graue Textfarbe */
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-size: 1rem;
+  text-align: center; /* Zentriert den Text */
+}
+
+.card a {
+  color: #E64E58; /* Neue Highlight-Farbe */
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.close-button {
+  background: none;
+  color: #E64E58; /* Neue Highlight-Farbe */
+  border: none;
+  padding: 10px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 5px 10px 15px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+/* Media Queries für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .landing-page {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .intro-text {
+    width: 100%; /* Texte nutzen die gesamte Breite des Bildschirms */
+  }
+
+  .card-container {
+    flex-direction: column; /* Karten untereinander anordnen */
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* Karten nutzen die gesamte Breite des Bildschirms */
+    margin: 10px 0; /* Abstand zwischen den Karten */
+  }
+
+  .close-button {
+    align-self: flex-start; /* Button linksbündig ausrichten */
+  }
+}

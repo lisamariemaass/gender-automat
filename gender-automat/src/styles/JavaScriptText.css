@@ -1,0 +1,57 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FDFDFE; /* Neue Hintergrundfarbe */
+  min-height: 70vh; /* Höhe des Viewports */
+  position: relative; /* Position relativ zum Container */
+}
+
+.javascripttext-page {
+  padding: 5px 70px;
+  background-color: #FDFDFE; /* Neue Hintergrundfarbe */
+  display: flex;
+  max-width: fit-content;
+  flex-direction: column;
+  width: 1300px;
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-size: 1rem; /* Schriftgröße für den gesamten Text */
+  color: #5c6269;
+}
+
+/* Überschriften */
+.javascripttext-page h1, .javascripttext-page h2 {
+  color: #444;
+  margin-bottom: 16px;
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  font-weight: 700;
+}
+
+/* Bilder */
+.javascripttext-page img {
+  width: 50%; /* Bildbreite auf 50% der Containerbreite setzen */
+  max-width: 500px; /* Maximalbreite auf 500px begrenzen */
+  height: auto; /* Höhe automatisch anpassen */
+  margin: 24px 0;
+}
+
+/* Hinweis-Box */
+.javascripttext-page .hint {
+  background: #e7f3fe;
+  padding: 12px 16px;
+  border-left: 4px solid #2196F3;
+  margin: 24px 0;
+  border-radius: 4px;
+  color: #333;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif; /* Lato Schriftart */
+  max-width: 910px;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .javascripttext-page img {
+    width: 100%; /* Bildbreite auf 100% der Containerbreite setzen */
+    max-width: none; /* Maximalbreite aufheben */
+  }
+}

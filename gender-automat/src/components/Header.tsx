@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import './Header.css';
-import logo from '../assets/gender-neutral-white.png';
+import '../styles/Header.css';
+import logo from '../assets/gender-neutral-red.png';
 import { FaSearch } from 'react-icons/fa'; // Importiere die Icons
 import { useLanguage } from '../contexts/LanguageContext'; // Importiere den LanguageContext
+import { Link } from 'react-router-dom'; // Verwende Link von react-router-dom
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,19 +21,28 @@ const Header: React.FC = () => {
           <span className="bar two"></span>
           <span className="bar three"></span>
         </button>
-        <img src={logo} alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
         <div className="header-text">
-          <h1>Inklusive Tech<span className="highlight">Guides</span></h1>
+          <h1><Link to="/" className="title-link">Inklusive Tech<span className="highlight">Guides</span></Link></h1>
           <h2 className="lato-light">Zukunft der technischen Dokumentation</h2>
         </div>
       </div>
       <nav className={isOpen ? 'open' : ''}>
         <ul>
-          <li><a href="#home">Startseite</a></li>
-          <li><a href="#guides">Dokumentationen</a></li>
-          <li><a href="#about">Über uns</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-          <li><a href="#help">Hilfe</a></li>
+          <li><Link to="/">Start</Link></li>
+          <li className="dropdown">
+            <Link to="#guides">Dokumentationen</Link>
+            <div className="dropdown-content">
+              <Link to="/installation">Installation von Git und GitHub</Link>
+              <Link to="/javascripttext">Dokumentation zur Nutzung von JavaScript</Link>
+              <Link to="/csstext">Erste Schritte zur Nutzung von CSS</Link>
+            </div>
+          </li>
+          <li><Link to="#about">Über uns</Link></li>
+          <li><Link to="#contact">Kontakt</Link></li>
+          <li><Link to="#help">Hilfe</Link></li>
         </ul>
         <div className="search-container">
           <button className="search-button">

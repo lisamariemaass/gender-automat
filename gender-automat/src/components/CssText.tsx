@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/CssText.css';
 import replaceGenericMasculine from '../utils/genderReplacer';
-import sanitizeInput from '../utils/sanitizeInput'; // Importiere sanitizeInput
 
 const CssText: React.FC = () => {
   const [isModified, setIsModified] = useState(false); // Zustand, ob der Text angepasst wurde
 
   // Originalinhalt der Seite
-  const originalContent = sanitizeInput(`
+  const originalContent = `
     <h1>Dokumentation zur Nutzung von CSS</h1>
     <h2 id="einfuhrung">1. Einführung</h2>
     <p>
@@ -115,7 +114,7 @@ const CssText: React.FC = () => {
       Es können hier alle notwendigen Grundlagen und fortgeschrittenen Techniken, gefunden werden. Der Leser, welcher sich intensiver mit CSS auseinandersetzen möchte, 
       erhält in diesem Dokument einen klar strukturierten Leitfaden zur Umsetzung eigener Projekte.
     </p>
-  `); // Bereinige den Originalinhalt
+  `; // Bereinige den Originalinhalt
 
   const [content, setContent] = useState(originalContent); // Zustand für den angezeigten Inhalt
 

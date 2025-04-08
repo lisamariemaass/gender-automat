@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/Installation.css';
 import replaceGenericMasculine from '../utils/genderReplacer';
-import sanitizeInput from '../utils/sanitizeInput'; // Importiere sanitizeInput
 
 const Installation: React.FC = () => {
   const [isModified, setIsModified] = useState(false); // Zustand, ob der Text angepasst wurde
 
   // Originalinhalt der Seite
-  const originalContent = sanitizeInput(`
+  const originalContent = `
     <h1>Anleitung zur Installation von Git und GitHub</h1>
     <h2 id="einfuhrung">1. Einführung</h2>
     <p>Git ist ein verteiltes Versionskontrollsystem, das der Entwickler nutzt, um Änderungen am Code zu verfolgen. 
@@ -88,7 +87,7 @@ const Installation: React.FC = () => {
     <h2 id="fazit">7. Fazit</h2>
     <p>Der Entwickler hat nun Git und GitHub eingerichtet und kann seine Projekte effizient verwalten. 
     Wenn weitere Funktionen genutzt werden möchten, kann sich die Dokumentation auf der GitHub-Website durchlesen werden. 
-  `); // Bereinige den Originalinhalt
+  `; // Bereinige den Originalinhalt
 
   const [content, setContent] = useState(originalContent); // Zustand für den angezeigten Inhalt
 

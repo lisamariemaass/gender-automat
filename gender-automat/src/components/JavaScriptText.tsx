@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/JavaScriptText.css';
 import replaceGenericMasculine from '../utils/genderReplacer';
-import sanitizeInput from '../utils/sanitizeInput'; // Importiere sanitizeInput
 
 // Bilder importieren
 import java1 from '../assets/java1.png';
@@ -14,7 +13,7 @@ const JavaScriptText: React.FC = () => {
   const [isModified, setIsModified] = useState(false); // Zustand, ob der Text angepasst wurde
 
   // Originalinhalt der Seite
-  const originalContent = sanitizeInput(`
+  const originalContent = `
     <h1>Dokumentation zur Nutzung von JavaScript</h1>
     <h2 id="einfuhrung">1. Einführung</h2>
     <p>
@@ -86,7 +85,7 @@ const JavaScriptText: React.FC = () => {
     <div class="hint">
       💡 <strong>Hinweis:</strong> Wer sich unsicher ist, darf sich an erfahrenen Programmierer wenden oder an einem Einsteiger-Workshop teilnehmen.
     </div>
-  `);
+  `;
 
   const [content, setContent] = useState(originalContent); // Zustand für den angezeigten Inhalt
 

@@ -28,36 +28,6 @@ const LandingPage: React.FC = () => {
           <p>Egal, ob Sie ein erfahrener Techniker oder ein neugieriger Anwender sind, unsere detaillierten Schritt-für-Schritt-Anleitungen helfen Ihnen, Ihre technischen Herausforderungen zu meistern und Ihre Projekte erfolgreich umzusetzen.</p>
           <p>Entdecken Sie unsere umfangreiche Sammlung an hilfreichen Ressourcen und machen Sie sich mit den neuesten Technologien vertraut.</p>
         </div>
-        {!showCards && (
-          <button className="discover-button" onClick={handleButtonClick}>
-            Entdecke Dokumentationen <span className="arrow">→</span>
-          </button>
-        )}
-        <div className={`card-container ${showCards ? 'show' : 'hide'}`}>
-          <div className="card">
-            <img src={earth2} alt="Installation einer Software" />
-            <h3>Installation von Git und GitHub</h3>
-            <p>Eine Schritt-für-Schritt-Anleitung zur Installation von Git und GitHub</p>
-            <Link to="/installation">Mehr erfahren</Link>
-          </div>
-          <div className="card">
-            <img src={coding} alt="Dokumentation zur Nutzung von JavaScript" />
-            <h3>Dokumentation zur Nutzung von JavaScript</h3>
-            <p>Einführung in die weit verbreitete Programmiersprache.</p>
-            <Link to="/javascripttext">Mehr erfahren</Link>
-          </div>
-          <div className="card">
-            <img src={hands} alt="Erstellen eines neuen Dokuments im CMS" />
-            <h3>Erste Schritte zur Nutzung von CSS</h3>
-            <p>Eine Anleitung zur Erstellung eines neuen Dokuments im Content-Management-System.</p>
-            <Link to="/csstext">Mehr erfahren</Link>
-          </div>
-        </div>
-        {showCards && (
-          <button className="close-button" onClick={handleCloseButtonClick}>
-            Dokumentationen schließen
-          </button>
-        )}
       </div>
     </div>
   );

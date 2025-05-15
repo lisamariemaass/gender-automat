@@ -22,7 +22,7 @@ const JavaScriptText: React.FC = () => {
     </p>
     <p>
       Der Anfänger sollte sich zunächst mit den Grundlagen vertraut machen, bevor er komplexere Anwendungen entwickelt.
-      Jeder Entwickler, welcher tiefer in die Materie einsteigen möchte, findet zahlreiche Tutorials und Leitfäden online.
+      Personen, die tiefer in die Materie einsteigen möchten, finden zahlreiche Tutorials und Leitfäden online.
     </p>
     <h2 id="erste-schritte">2. Erste Schritte</h2>
     <p>Der Entwickler benötigt lediglich einen Texteditor und einen Browser, um JavaScript auszuführen.</p>
@@ -37,8 +37,8 @@ const JavaScriptText: React.FC = () => {
     <p><strong>Beispiel:</strong></p>
     <img src="${java2}" alt="Beispiel für Variablen und Datentypen" />
     <p>
-      Jeder Entwickler muss darauf achten, die richtige Deklaration (let, const oder var) zu verwenden.
-      Der Einzelne entscheidet dabei, ob der Wert veränderlich sein soll (let/var) oder nicht (const).
+      Er muss darauf achten, die richtige Deklaration (let, const oder var) zu verwenden.
+      Der Einzelne entscheidet dabei, ob der Wert veränderlich ist (let/var) oder nicht (const).
     </p>
     <h2 id="funktionen">4. Funktionen</h2>
     <p>Der Entwickler nutzt Funktionen, um wiederverwendbaren Code zu schreiben.</p>
@@ -48,11 +48,11 @@ const JavaScriptText: React.FC = () => {
       Der Programmierer, welcher viele Funktionen schreibt, sollte darauf achten, die Funktionen sinnvoll zu benennen.
     </p>
     <h2 id="fehlerbehandlung">5. Fehlerbehandlung</h2>
-    <p>Der Entwickler sollte auch wissen, wie man mit Fehlern umgeht.</p>
+    <p>Der Entwickler sollte auch wissen, wie mit Fehlern umgegangen wird.</p>
     <p><strong>Beispiel:</strong></p>
     <img src="${java4}" alt="Beispiel für Fehlerbehandlung" />
     <p>
-      Der Leser dieser Anleitung sollte immer prüfen, ob sein Code korrekt funktioniert.
+      Der Leser dieser Anleitung sollte immer prüfen, ob sein Code funktionsfähig ist.
       Jeder, der auf Fehler stößt, kann diese mit try-catch-Blöcken abfangen.
     </p>
     <h2 id="fazit">6. Fazit</h2>
@@ -63,7 +63,7 @@ const JavaScriptText: React.FC = () => {
     </p>
     <h2 id="testmoglichkeiten">7. Testmöglichkeiten</h2>
     <p>
-      Jeder Entwickler, welcher JavaScript ausprobieren möchte, kann dazu auch Online-Editoren nutzen.
+      Jeder, der JavaScript ausprobieren möchte, kann dazu auch Online-Editoren nutzen.
     </p>
     <p>
       Ein besonders einfaches und schnelles Tool ist&nbsp;
@@ -83,7 +83,7 @@ const JavaScriptText: React.FC = () => {
       Auch erfahrene Entwickler können dort schnell neue Funktionen testen.
     </p>
     <div class="hint">
-      💡 <strong>Hinweis:</strong> Wer sich unsicher ist, darf sich an erfahrenen Programmierer wenden oder an einem Einsteiger-Workshop teilnehmen.
+      💡 <strong>Hinweis:</strong> Bei Fragen empfiehlt es sich, erfahrene Personen anzusprechen oder einen Einsteiger-Workshop zu besuchen.
     </div>
   `;
 

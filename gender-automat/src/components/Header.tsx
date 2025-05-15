@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/Header.css';
 import logo from '../assets/gender-neutral-red.png';
-import { FaSearch } from 'react-icons/fa'; // Importiere die Icons
 import { useLanguage } from '../contexts/LanguageContext'; // Importiere den LanguageContext
 import { Link } from 'react-router-dom'; // Verwende Link von react-router-dom
+import SearchIcon from '@mui/icons-material/Search';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             <div className="dropdown-content">
               <Link to="/installation">Installation von Git und GitHub</Link>
               <Link to="/javascripttext">Dokumentation zur Nutzung von JavaScript</Link>
-              <Link to="/csstext">Erste Schritte zur Nutzung von CSS</Link>
+              <Link to="/csstext">Dokumentation zur Nutzung von CSS</Link>
             </div>
           </li>
           <li><Link to="#about">Über uns</Link></li>
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
         <div className="search-container">
           <button className="search-button">
             <input type="text" placeholder="Ich suche nach" className="search-input" />
-            <FaSearch className="search-icon" />
+            <SearchIcon className="search-icon" />
           </button>
         </div>
       </nav>

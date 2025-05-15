@@ -1,11 +1,12 @@
 //zum Ausführen des Tests: npm test
-// src/utils/sanitizeInput.test.js
 /**
  * Überprüft und bereinigt den Text, um sicherzustellen, dass kein injizierter Code enthalten ist.
  * @param {string} text - Der zu überprüfende Text.
  * @returns {string} - Der bereinigte Text.
  */
 function sanitizeInput(text) {
+  if (!text) return ''; // Überprüft, ob der Text null, undefined oder leer ist
+
   // Entferne potenziell gefährliche Tags und Attribute
   const sanitizedText = text.replace(/<script.*?>.*?<\/script>/gi, "")
                              .replace(/<iframe.*?>.*?<\/iframe>/gi, "")

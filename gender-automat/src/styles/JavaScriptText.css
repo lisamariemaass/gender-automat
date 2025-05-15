@@ -7,13 +7,13 @@
   position: relative; /* Position relativ zum Container */
 }
 
-.javascripttext-page {
+.javascripttext-content {
   padding: 5px 70px;
   background-color: #FDFDFE; /* Neue Hintergrundfarbe */
   display: flex;
   max-width: fit-content;
   flex-direction: column;
-  width: 1300px;
+  width: 1000px;
   font-family: 'Lato', sans-serif; /* Lato Schriftart */
   font-size: 1rem; /* Schriftgröße für den gesamten Text */
   color: #5c6269;
@@ -45,7 +45,7 @@
   color: #333;
   font-size: 0.95rem;
   font-family: 'Lato', sans-serif; /* Lato Schriftart */
-  max-width: 910px;
+  max-width: 810px;
 }
 
 /* Media Query für kleinere Bildschirme */

@@ -122,7 +122,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     font-family: 'Lato', sans-serif; /* Lato Schriftart */
-    margin: 5px 1px;
+    margin: 8px 5px 1px;
 }
 
 .search-button {
@@ -140,6 +140,7 @@ nav ul li a:hover {
     max-width: 250px;
     font-family: 'Lato', sans-serif; /* Lato Schriftart */
     line-height: 1.5; /* Zeilenhöhe */
+    margin-right: 5px;
 }
 
 .search-input {

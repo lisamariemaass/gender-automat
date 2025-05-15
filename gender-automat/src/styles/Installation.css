@@ -13,7 +13,7 @@
   display: flex;
   max-width: fit-content;
   flex-direction: column;
-  width: 1300px;
+  width: 1000px;
   font-family: 'Lato', sans-serif; /* Lato Schriftart */
   font-size: 1rem; /* Schriftgröße für den gesamten Text */
   color: #5c6269;
@@ -38,10 +38,6 @@
     overflow-x: auto;
     display: inline-block; /* Inline-Block-Darstellung */
   }
-
-.installation-content pre code .comment {
-  color: #888888; /* Farbe für Kommentare */
-}
 
 /* Links */
 .installation-content a {

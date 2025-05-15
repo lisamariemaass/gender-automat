@@ -7,36 +7,28 @@
   position: relative; /* Position relativ zum Container */
 }
 
-.csstext-page {
+.csstext-content {
   padding: 5px 70px;
   background-color: #FDFDFE; /* Neue Hintergrundfarbe */
-  max-width: fit-content;
   display: flex;
+  max-width: fit-content;
   flex-direction: column;
-  width: 1300px;
+  width: 1000px;
   font-family: 'Lato', sans-serif; /* Lato Schriftart */
   font-size: 1rem; /* Schriftgröße für den gesamten Text */
   color: #5c6269;
 }
 
 /* Überschriften */
-.csstext-page h1, .csstext-page h2 {
+.csstext-content h1, .csstext-content h2 {
   color: #444;
   margin-bottom: 16px;
   font-family: 'Lato', sans-serif; /* Lato Schriftart */
   font-weight: 700;
 }
 
-/* Bilder */
-.csstext-page img {
-  width: 50%; /* Bildbreite auf 50% der Containerbreite setzen */
-  max-width: 500px; /* Maximalbreite auf 500px begrenzen */
-  height: auto; /* Höhe automatisch anpassen */
-  margin: 24px 0;
-}
-
 /* Styling für allgemeine <code>-Blöcke */
-.csstext-page code {
+.csstext-content code {
   background-color: #f4f4f4; /* Grauer Hintergrund */
   color: #333; /* Schwarze Schrift */
   border-radius: 4px;
@@ -50,13 +42,13 @@
 }
 
 /* Styling für <pre> mit <code> */
-.csstext-page pre code {
+.csstext-content pre code {
   display: block;
   white-space: pre-wrap; /* Zeilenumbrüche innerhalb des Blocks */
 }
 
 /* Spezifisches Styling für .css-code */
-.csstext-page code.css-code {
+.csstext-content code.css-code {
   background-color: #2d2d2d; /* Dunkler Hintergrund */
   color: #ffffff; /* Weiße Schrift */
   border-radius: 4px;
@@ -67,7 +59,7 @@
 }
 
 /* Styling für Kommentare innerhalb von .css-code */
-.csstext-page code.css-code .comment {
+.csstext-content code.css-code .comment {
   color: #888888; /* Farbe für Kommentare */
 }
 

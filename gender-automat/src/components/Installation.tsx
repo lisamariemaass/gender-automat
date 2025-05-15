@@ -47,7 +47,8 @@ const Installation: React.FC = () => {
     </p>
     <h2 id="github-konto">4. Erstellung eines GitHub-Kontos</h2>
     <ol>
-      <li>Der Nutzer besucht <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> und klickt auf "Sign up".</li>
+      <li>Der Nutzer besucht <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+      <li>Er klickt auf "Sign up" und gibt seine Daten ein.</li>
       <li>Der Anwender gibt seinen Benutzernamen, seine E-Mail-Adresse und ein sicheres Passwort ein.</li>
       <li>Der Programmierer bestätigt seine E-Mail-Adresse, um das Konto zu aktivieren.</li>
     </ol>

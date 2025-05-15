@@ -1,3 +1,6 @@
+// Untenstehend kann das Kommentar entfernt werden,
+// um die Umschaltung der Sprache zu testen
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface LanguageContextProps {

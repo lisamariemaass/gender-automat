@@ -4,15 +4,13 @@
  * @returns {string} - Der angepasste Text.
  */
 function replaceGenericMasculine(text) {
-  const substantiveReplacements = [
-    // Spezifische Fälle zuerst prüfen
-    { search: /\bJeder,\sder\b/g, replace: "Alle, die" },
-    { search: /\bDer\sEinzelne\b/g, replace: "Die Einzelnen" },
-    { search: /\bDer\sInteressierte\b/g, replace: "Die Interessierten" },
-    { search: /\bDer\sDesigner\b/g, replace: "Die Designenden" }, // Neue Regel für "der Designer"
-    { search: /\bJeder\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => `Alle ${p1 === "Leser" ? "Lesenden" : p1.replace(/er$/, "elnden")}` },
-    { search: /\bdem\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => `den ${p1 === "Leser" ? "Lesenden" : p1.replace(/er$/, "elnden")}` },
-    { search: /\bEntwicklern\b/g, replace: "Entwickelnden" },
+  // Pronomenersetzungen
+  const pronounReplacements = [
+    // 1. Personalpronomen
+    { search: /\bsein\b/g, replace: "ihr" },
+    { search: /\b[Ee]r\b/g, replace: (match) => (match === "Er" ? "Sie" : "sie") },
+
+    // 2. Possessivpronomen
     { search: /\bseine(?:n|m|r|s)?\b/g, replace: (match) => {
         switch (match) {
           case "seinen": return "ihren";
@@ -20,20 +18,34 @@ function replaceGenericMasculine(text) {
           case "seiner": return "ihrer";
           case "seine": return "ihre";
           case "seines": return "ihres";
-          default: return match;
+          default: return match; 
         }
       }
     },
-    { search: /\bsein\b/g, replace: "ihr" },
-    { search: /\bvom\s(Webentwickler|Entwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => `von ${p1 === "Leser" ? "Lesenden" : p1.replace(/er$/, "elnden")}` },
 
-    // Fälle mit "welcher" prüfen
+    // 3. Relativpronomen
     { search: /\bwelcher\b/g, replace: "welche" },
 
-    // Fälle mit "Der" oder "der" prüfen
-    {
-      search: /\bDer\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g,
-      replace: (match, p1) => {
+    // 4. Indefinitpronomen
+    { search: /\bJeder,\sder\b/g, replace: "Alle, die" },
+    { search: /\bJeder\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => `Alle ${p1 === "Leser" ? "Lesenden" : p1.replace(/er$/, "elnden")}` },
+  ];
+
+  // 5. Substantive
+  const substantiveReplacements = [
+    { search: /\bdem Anwender\b/g, replace: "den Nutzenden" },
+    { search: /\bDer\sEinzelne\b/g, replace: "Die Einzelnen" },
+    { search: /\bDer\sInteressierte\b/g, replace: "Die Interessierten" },
+    { search: /\bDer\sDesigner\b/g, replace: "Die Designenden" },
+    { search: /\bdem\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => {
+        if (p1 === "Anwender") return "den Nutzenden";
+        if (p1 === "Leser") return "den Lesenden";
+        return `den ${p1.replace(/er$/, "elnden")}`;
+      }
+    },
+    { search: /\bEntwicklern\b/g, replace: "Entwickelnden" },
+    { search: /\bvom\s(Webentwickler|Entwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => `von ${p1 === "Leser" ? "Lesenden" : p1.replace(/er$/, "elnden")}` },
+    { search: /\bDer\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => {
         if (p1 === "Programmierer") return "Die Programmierenden";
         if (p1 === "Nutzer") return "Die Nutzenden";
         if (p1 === "Anwender") return "Die Nutzenden";
@@ -43,9 +55,7 @@ function replaceGenericMasculine(text) {
         return `Die ${p1.replace(/er$/, "elnden")}`;
       },
     },
-    {
-      search: /\bder\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g,
-      replace: (match, p1) => {
+    { search: /\bder\s(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match, p1) => {
         if (p1 === "Programmierer") return "die Programmierenden";
         if (p1 === "Nutzer") return "die Nutzenden";
         if (p1 === "Anwender") return "die Nutzenden";
@@ -55,11 +65,7 @@ function replaceGenericMasculine(text) {
         return `die ${p1.replace(/er$/, "elnden")}`;
       },
     },
-
-    // Fälle ohne Artikel prüfen
-    {
-      search: /\b(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g,
-      replace: (match) => {
+    { search: /\b(Entwickler|Webentwickler|Programmierer|Nutzer|Administrator|Leser|Anwender|Anfänger)\b/g, replace: (match) => {
         if (match === "Programmierer") return "Programmierende";
         if (match === "Nutzer") return "Nutzende";
         if (match === "Anwender") return "Nutzende";
@@ -71,8 +77,12 @@ function replaceGenericMasculine(text) {
     },
   ];
 
+  // 6. Verben
   const verbReplacements = [
+    { search: /\bentscheidet\b/g, replace: "entscheiden" },
+    { search: /\bwählt\b/g, replace: "wählen" },
     { search: /\bsollte\b/g, replace: "sollten" },
+    { search: /\bentwickelt\b/g, replace: "entwickeln" },
     { search: /\bliest\b/g, replace: "lesen" },
     { search: /\bcommittet\b/g, replace: "committen" },
     { search: /\bpusht\b/g, replace: "pushen" },
@@ -116,19 +126,12 @@ function replaceGenericMasculine(text) {
     { search: /\bauseinandersetzen möchte\b/g, replace: "auseinandersetzen möchten" },
   ];
 
-  
-  const exceptionReplacements = [
-    { search: /\bEr wählt empfohlene Einstellungen aus\b/g, replace: "Es werden empfohlene Einstellungen ausgewählt" },
-    { search: /\bDer Nutzer fügt den SSH-Schlüssel zu\b/g, replace: "Die Nutzenden fügen den SSH-Schlüssel zu" },
-  ];
-
-  // Text in Sätze aufteilen
   const sentences = text.split(/(?<=[.!?])\s+/);
 
-  // Jeden Satz separat verarbeiten
   const updatedSentences = sentences.map((sentence) => {
     let updatedSentence = sentence;
     let wasSubstantiveReplaced = false;
+    let wasPronounReplaced = false;
 
     // Substantive ersetzen und prüfen, ob sich etwas geändert hat
     for (const { search, replace } of substantiveReplacements) {
@@ -139,13 +142,17 @@ function replaceGenericMasculine(text) {
       }
     }
 
-    // Ausnahmen immer anwenden
-    for (const { search, replace } of exceptionReplacements) {
+    // Pronomen ersetzen und prüfen, ob sich etwas geändert hat
+    for (const { search, replace } of pronounReplacements) {
+      const before = updatedSentence;
       updatedSentence = updatedSentence.replace(search, replace);
+      if (before !== updatedSentence) {
+        wasPronounReplaced = true;
+      }
     }
 
-    // Nur wenn Substantive ersetzt wurden → Verben anpassen
-    if (wasSubstantiveReplaced) {
+    // Verben ersetzen, wenn Substantive oder Pronomen ersetzt wurden
+    if (wasSubstantiveReplaced || wasPronounReplaced) {
       for (const { search, replace } of verbReplacements) {
         updatedSentence = updatedSentence.replace(search, replace);
       }
@@ -154,17 +161,7 @@ function replaceGenericMasculine(text) {
     return updatedSentence;
   });
 
-  // Verarbeitete Sätze wieder zusammenfügen
   return updatedSentences.join(" ");
 }
-
-// Beispielanwendung
-const originalText = `
-  Der Interessierte kann sich weitere Informationen einholen. Dem Entwickler wurde eine Aufgabe zugewiesen.
-`;
-
-const updatedText = replaceGenericMasculine(originalText);
-console.log("Originaler Text:\n", originalText);
-console.log("Angepasster Text:\n", updatedText);
 
 export default replaceGenericMasculine;

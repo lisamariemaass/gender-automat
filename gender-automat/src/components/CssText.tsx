@@ -7,28 +7,30 @@ const CssText: React.FC = () => {
 
   // Originalinhalt der Seite
   const originalContent = `
-    <h1>Dokumentation zur Nutzung von CSS</h1>
+    <h1>Erste Schritte zur Nutzung von CSS</h1>
     <h2 id="einfuhrung">1. Einführung</h2>
     <p>
       CSS (Cascading Style Sheets) ist eine Stylesheet-Sprache, die der Entwickler einsetzt, um das Aussehen von HTML-Dokumenten zu definieren. 
       Der Designer, welcher eine Webseite erstellt, trennt damit Inhalt und visuelle Darstellung, sodass der Programmierer Änderungen am Layout vornehmen kann, 
-      ohne den eigentlichen Inhalt zu verändern. Der Leser dieser Dokumentation erhält einen umfassenden Überblick über die Grundlagen und fortgeschrittene Techniken von CSS.
+      ohne den eigentlichen Inhalt zu verändern. Der Leser dieser Dokumentation erhält einen umfassenden Überblick über die Grundlagen von CSS.
     </p>
     <h2 id="grundlagen">2. Grundlagen</h2>
     <p>
       CSS ermöglicht es dem Entwickler, Stilregeln festzulegen, die auf HTML-Elemente angewendet werden. 
-      Jede Regel besteht aus einem Selektor und einer Deklarationsblock, in dem der Programmierer Eigenschaften und Werte definiert. 
+      Jede Regel besteht aus einem Selektor und einem Deklarationsblock, in dem der Programmierer Eigenschaften und Werte definiert. 
       Der generische Aufbau sieht folgendermaßen aus:
     </p>
-        <code class="css-code">
-          <span class="comment">/* Beispiel einer CSS-Regel */</span>
-          <br />
-          element &#123;
-          <br />
-          &nbsp;&nbsp;eigenschaft: wert;
-          <br />
-          &#125;
-        </code>
+    <p>
+      <code class="css-code">
+        <span class="comment">/* Beispiel einer CSS-Regel */</span>
+        <br />
+        element {
+        <br />
+        &nbsp;&nbsp;eigenschaft: wert;
+        <br />
+        }
+      </code>
+    </p>
     <p>
       Wer das Erscheinungsbild optimieren möchte, kann mithilfe dieser Syntax die typografische Gestaltung, Farben, Abstände und viele weitere Aspekte einer Webseite steuern.
     </p>
@@ -93,7 +95,7 @@ const CssText: React.FC = () => {
     <p>
       Um eine optimale Darstellung auf verschiedenen Endgeräten zu gewährleisten, werden Media Queries eingesetzt. 
       Der Entwickler definiert Bedingungen, unter denen bestimmte CSS-Regeln angewendet werden, sodass der Administrator der Webseite sicherstellt, 
-      dass die Webseite auf Desktop-PCs, Tablets und Smartphones gleichermaßen gut funktioniert.
+      dass die Webseite auf Desktop-PCs, Tablets und Smartphones gleichermaßen gut aussieht.
     </p>
     <h2 id="fortgeschrittene-techniken">7. Fortgeschrittene Techniken</h2>
     <p>
